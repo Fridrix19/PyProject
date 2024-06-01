@@ -1,0 +1,67 @@
+digraph {
+	A [label="Начало" shape=oval]
+	B [label="Инициализация" shape=box]
+	C [label="Загрузка заказов из файла" shape=box]
+	D [label="Показать главное меню" shape=box]
+	E [label="Ввод опции пользователя" shape=diamond]
+	F [label="Опция 1?" shape=diamond]
+	G [label="Создать новый заказ" shape=box]
+	H [label="Ввод имени пользователя" shape=box]
+	I [label="Показать меню товаров" shape=box]
+	J [label="Ввод выбора товара" shape=box]
+	K [label="Выбор корректен?" shape=diamond]
+	L [label="Неверный выбор" shape=box]
+	M [label="Ввод количества" shape=box]
+	N [label="Рассчитать общую стоимость и дату" shape=box]
+	O [label="Сохранить заказ" shape=box]
+	P [label="Показать информацию о заказе" shape=box]
+	Q [label="Сохранить заказ в файл" shape=box]
+	R [label="Опция 2?" shape=diamond]
+	S [label="Показать все заказы" shape=box]
+	T [label="Опция 3?" shape=diamond]
+	U [label="Удалить заказ" shape=box]
+	V [label="Есть заказы для удаления?" shape=diamond]
+	W [label="Введите ID заказа для удаления" shape=box]
+	X [label="Удалить заказ" shape=box]
+	Y [label="Обновить файл заказов" shape=box]
+	Z [label="Опция 4?" shape=diamond]
+	End [label="Завершить выполнение программы" shape=box]
+	End2 [label="Конец" shape=oval]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F [label="Опция 1"]
+	E -> R [label="Опция 2"]
+	E -> T [label="Опция 3"]
+	E -> Z [label="Опция 4"]
+	F -> G [label="Да"]
+	G -> H
+	H -> I
+	I -> J
+	J -> K
+	K -> L [label="Нет"]
+	K -> M [label="Да"]
+	M -> N
+	N -> O
+	O -> P
+	P -> Q
+	Q -> D
+	L -> J
+	R -> S [label="Да"]
+	S -> D
+	T -> U [label="Да"]
+	U -> S
+	S -> V
+	V -> W [label="Да"]
+	W -> X
+	X -> Y
+	Y -> D
+	Z -> End [label="Да"]
+	End -> End2
+	F -> D [label="Нет"]
+	R -> D [label="Нет"]
+	T -> D [label="Нет"]
+	Z -> D [label="Нет"]
+	V -> D [label="Нет"]
+}
